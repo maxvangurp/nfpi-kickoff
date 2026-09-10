@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="description" content="Kickoff Google Ads voor NFPI, opgesteld door Aizy." />
+<meta name="theme-color" content="#0B0718" />
+<title>NFPI kickoff Google Ads &middot; Aizy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #160D27;
+    --bg-deep: #0B0718;
+    --bg-soft: #250F4D;
+    --ink: #FFFFFF;
+    --ink-dim: rgba(255,255,255,0.72);
+    --ink-mute: rgba(255,255,255,0.45);
+    --purple: #6935CC;
+    --purple-2: #5623B3;
+    --violet: #9965F2;
+    --pink: #FF47D8;
+    --cyan: #5AF2FF;
+    --card: rgba(255,255,255,0.04);
+    --card-strong: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.12);
+    --grad: linear-gradient(90deg, #5623B3 0%, #FF47D8 51.7%, #5AF2FF 100%);
+    --grad-soft: linear-gradient(135deg, rgba(105,53,204,0.35), rgba(255,71,216,0.18) 60%, rgba(90,242,255,0.15));
+    --good: #5AF2FF;
+    --warn: #FFB547;
+    --red: #FF6B8A;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg-deep);
+    color: var(--ink);
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+  .display {
+    font-family: "Special Gothic Expanded One", "Plus Jakarta Sans", sans-serif;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1.05;
+  }
+
+  /* Slide container */
+  .slide {
+    min-height: 100vh;
+    padding: 90px clamp(28px, 6vw, 120px) 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .slide.auto {
+    min-height: auto;
+    padding: 70px clamp(28px, 6vw, 120px);
+  }
+  .slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(800px 500px at 85% -10%, rgba(105,53,204,0.28), transparent 60%),
+      radial-gradient(700px 500px at -10% 110%, rgba(255,71,216,0.18), transparent 60%),
+      radial-gradient(600px 400px at 110% 110%, rgba(90,242,255,0.12), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .slide > * { position: relative; z-index: 1; }
+
+  /* Topbar */
+  .topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px clamp(20px, 4vw, 40px);
+    background: rgba(11,7,24,0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .logo-img {
+    height: 28px;
+    width: auto;
+    display: block;
+  }
+
+  /* Typography helpers */
+  .eyebrow {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 22px;
+  }
+  .eyebrow .dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--grad);
+    margin-right: 10px;
+    vertical-align: 1px;
+  }
+
+  h1.title {
+    font-family: "Special Gothic Expanded One", "Plus Jakarta Sans", sans-serif;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    font-size: clamp(40px, 6.5vw, 92px);
+    margin: 0 0 24px;
+  }
+  h1.title .grad,
+  h2.heading .grad,
+  h3.sub .grad {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  h2.heading {
+    font-family: "Special Gothic Expanded One", "Plus Jakarta Sans", sans-serif;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 1.05;
+    font-size: clamp(32px, 4.8vw, 60px);
+    margin: 0 0 20px;
+  }
+  h3.sub {
+    font-size: clamp(22px, 2.2vw, 30px);
+    margin: 40px 0 16px;
+    font-weight: 700;
+  }
+  p.lead {
+    font-size: clamp(16px, 1.25vw, 19px);
+    color: var(--ink-dim);
+    max-width: 880px;
+    margin: 0 0 24px;
+  }
+  p.body {
+    font-size: 16px;
+    color: var(--ink-dim);
+    max-width: 880px;
+    margin: 0 0 16px;
+  }
+  .meta {
+    color: var(--ink-mute);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .gradient-line {
+    height: 3px;
+    width: 120px;
+    background: var(--grad);
+    border-radius: 999px;
+    margin-bottom: 26px;
+  }
+
+  /* Cards grid */
+  .grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 26px;
+    backdrop-filter: blur(6px);
+  }
+  .card.accent {
+    background:
+      linear-gradient(135deg, rgba(105,53,204,0.35), rgba(255,71,216,0.15)),
+      var(--card-strong);
+    border: 1px solid rgba(255,71,216,0.35);
+  }
+  .card .label {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 14px;
+  }
+  .card h4 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .card p { margin: 0; color: var(--ink-dim); font-size: 14.5px; }
+  .card .big {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: clamp(36px, 4vw, 60px);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+  .card .value {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: clamp(32px, 3.6vw, 52px);
+    line-height: 1;
+    letter-spacing: 0.01em;
+  }
+  .card .sub {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--ink-dim);
+  }
+
+  .delta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(90,242,255,0.12);
+    color: var(--cyan);
+    margin-top: 10px;
+    letter-spacing: 0.05em;
+  }
+  .delta.down { background: rgba(255,180,71,0.12); color: var(--warn); }
+
+  /* Findings list */
+  .findings {
+    display: grid;
+    gap: 14px;
+    margin-top: 8px;
+    max-width: 960px;
+  }
+  .finding {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+    padding: 18px 22px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.025);
+    align-items: start;
+  }
+  .finding .ico {
+    width: 22px; height: 22px;
+    border-radius: 8px;
+    background: var(--grad);
+    display: inline-block;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .finding.warn .ico { background: linear-gradient(135deg, #FFB547, #FF6B8A); }
+  .finding.good .ico { background: linear-gradient(135deg, #5AF2FF, #9965F2); }
+  .finding h5 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .finding p { margin: 0; color: var(--ink-dim); font-size: 15px; }
+
+  /* Callout (subtle purple/cyan tint, use for Aanbeveling / Samengevat / Kernbevinding) */
+  .callout {
+    margin-top: 28px;
+    padding: 22px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: linear-gradient(135deg, rgba(105,53,204,0.18), rgba(90,242,255,0.05));
+    font-size: 15px;
+    color: var(--ink-dim);
+    max-width: 960px;
+  }
+  .callout strong { color: var(--ink); font-weight: 700; }
+
+  /* Chapter header with big gradient number */
+  .chapter-head {
+    display: flex;
+    align-items: baseline;
+    gap: 22px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .chapter-head .num {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: clamp(48px, 6vw, 90px);
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+  }
+
+  /* Device / two-stat feature */
+  .device-stat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 16px 0 8px;
+    max-width: 960px;
+  }
+  .device-stat .stat {
+    padding: 26px 28px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+  .device-stat .stat.highlight {
+    background: linear-gradient(135deg, rgba(90,242,255,0.15), rgba(105,53,204,0.15));
+    border-color: rgba(90,242,255,0.35);
+  }
+  .device-stat .stat .small {
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 10px;
+  }
+  .device-stat .stat .big {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: clamp(36px, 4.5vw, 58px);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .device-stat .stat .hint {
+    font-size: 14px;
+    color: var(--ink-dim);
+  }
+  @media (max-width: 720px) {
+    .device-stat { grid-template-columns: 1fr; }
+  }
+
+  /* Summary action rows */
+  .sum-row {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-top: 1px solid var(--border);
+  }
+  .sum-row:last-child { border-bottom: 1px solid var(--border); }
+  .sum-row .num {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 22px;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .sum-row h4 { margin: 0 0 6px; font-size: 20px; font-weight: 700; }
+  .sum-row p { margin: 0; color: var(--ink-dim); font-size: 15px; }
+
+  /* Platform header (Google / Meta / etc.) */
+  .platform {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+  .platform-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px; height: 64px;
+    border-radius: 16px;
+    background: var(--grad-soft);
+    border: 1px solid var(--border);
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 22px;
+  }
+  .platform h2 { margin: 0; }
+  .platform .sub { color: var(--ink-dim); font-size: 14px; margin-top: 4px; }
+
+  /* KPI table */
+  table.kpi {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    font-size: 14px;
+  }
+  table.kpi th, table.kpi td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  table.kpi th {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-weight: 600;
+  }
+  table.kpi td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  table.kpi td.pos { color: var(--cyan); font-weight: 700; }
+  table.kpi td.neg { color: var(--warn); font-weight: 700; }
+
+  /* Bar chart */
+  .bars {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 90px;
+    gap: 14px;
+    align-items: center;
+    font-size: 13px;
+  }
+  .bar-row .lbl { color: var(--ink-dim); }
+  .bar-row .track {
+    height: 14px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .bar-row .fill {
+    height: 100%;
+    border-radius: 999px;
+    background: var(--grad);
+  }
+  .bar-row .val {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* Bullet list */
+  .bullets {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    display: grid;
+    gap: 12px;
+  }
+  .bullets li {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 14px;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .bullets li::before {
+    content: "";
+    display: block;
+    width: 10px; height: 10px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: var(--grad);
+  }
+  .bullets li span { color: var(--ink-dim); }
+
+  /* Split layout for tables + cards */
+  .split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 36px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .split { grid-template-columns: 1fr; }
+    .bar-row { grid-template-columns: 90px 1fr 70px; }
+  }
+
+  /* KPI pill list */
+  .kpi-row {
+    display: flex; gap: 18px; flex-wrap: wrap;
+    margin: 10px 0 4px;
+  }
+  .kpi-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--ink-dim);
+  }
+  .kpi-pill strong { color: var(--ink); font-weight: 700; }
+
+  /* CTA buttons */
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 999px;
+    background: var(--grad);
+    color: #0B0718;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .cta.ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--border);
+  }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+
+  /* Scroll hint */
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--ink-mute);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .scroll-hint::after {
+    content: "";
+    width: 1px; height: 28px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  }
+
+  /* Footer */
+  footer {
+    padding: 44px clamp(20px, 4vw, 40px);
+    text-align: center;
+    color: var(--ink-mute);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-top: 1px solid var(--border);
+  }
+  /* Responsive verfijning */
+  h1.title, h2.heading, h3.sub, .card h4, .finding h5, .sum-row h4 {
+    overflow-wrap: break-word;
+    hyphens: manual;
+  }
+  .grid > *, .split > *, .device-stat > * { min-width: 0; }
+  .card .value {
+    font-size: clamp(26px, 2.3vw, 38px);
+    white-space: nowrap;
+  }
+  .device-stat .stat .big { font-size: clamp(32px, 3.8vw, 52px); }
+  .kpi-pill { flex-wrap: wrap; line-height: 1.4; }
+  table.kpi td, table.kpi th { vertical-align: top; }
+
+  @media (max-width: 1180px) {
+    .grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .card { padding: 22px; }
+  }
+  @media (max-width: 900px) {
+    .card .value { font-size: 34px; }
+    table.kpi { font-size: 13px; }
+    table.kpi th, table.kpi td { padding: 12px 10px; }
+  }
+  @media (max-width: 720px) {
+    .slide { min-height: auto; padding: 84px 20px 56px; }
+    .slide#top { min-height: 100svh; }
+    h1.title { font-size: clamp(32px, 10vw, 46px); }
+    h2.heading { font-size: clamp(22px, 6.8vw, 32px); }
+    p.lead { font-size: 16px; }
+    .gradient-line { margin-bottom: 18px; }
+    .grid { grid-template-columns: 1fr; gap: 14px; }
+    .card .value { font-size: 36px; }
+    .device-stat { gap: 14px; }
+    .device-stat .stat { padding: 22px; }
+    .device-stat .stat .big { font-size: 38px; }
+    .sum-row { grid-template-columns: 36px 1fr; gap: 12px; padding: 18px 0; }
+    .sum-row h4 { font-size: 17px; }
+    .finding { padding: 16px; gap: 12px; }
+    .callout { padding: 18px; }
+    .kpi-row { gap: 10px; }
+    .kpi-pill { border-radius: 14px; }
+    .cta { width: 100%; justify-content: center; }
+    .scroll-hint { display: none; }
+    .logo-img { height: 24px; }
+  }
+
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Aizy">
+    <svg class="logo-img" viewBox="270 440 530 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Aizy">
+      <g fill="#FFFFFF">
+        <ellipse cx="318" cy="599.1" rx="40.8" ry="40.8" transform="translate(-283.2 913.1) rotate(-89.6)"/>
+        <path d="M447.5,513.4c-9.4-5.9-28.5-6.2-45.6-5.1-16.3,1.1-31.4-8.3-37.6-23.5-6.5-15.9-15.2-32.9-24.6-38.8-19.2-12-44.4-6.1-56.4,13.1-12,19.2-6.1,44.5,13.1,56.4,9.4,5.9,28.5,6.2,45.6,5.1,16.3-1.1,31.4,8.3,37.6,23.5,6.5,15.9,15.2,32.9,24.6,38.8,19.2,12,44.4,6.1,56.4-13.1,12-19.2,6.1-44.5-13.1-56.4Z"/>
+      </g>
+      <g fill="#F2F2F2">
+        <path d="M789.8,489c0-2-1.5-3.4-4.1-3.4h-4v9.7h2.1v-3h2.2l1.9,3h2.1l-2.2-3.3c1.3-.5,1.9-1.6,1.9-3ZM785.6,490.7h-1.8v-3.4h1.8c1.4,0,2.2.6,2.2,1.7s-.8,1.7-2.2,1.7Z"/>
+        <path d="M785.3,481.8c-4.9,0-8.7,3.8-8.7,8.7s3.8,8.7,8.7,8.7,8.7-3.8,8.7-8.7-3.7-8.6-8.7-8.6ZM785.3,497.8c-4.2,0-7.3-3.2-7.3-7.3s3.1-7.3,7.3-7.3,7.2,3.2,7.2,7.3-3.2,7.4-7.3,7.4Z"/>
+        <path d="M696.2,610.5l2.8-18c2.3.5,4.7.7,7.1.8,5.7,0,8-2.3,8-6.8s-.6-4.9-3.6-14.1l-21.8-66.7h20.4l16.7,53.8,17-53.8h20l-23.7,73.5c-8,24.9-14.1,33.5-28.6,33.5-4.9,0-9.7-.7-14.4-2.2ZM496,545.3c.1-22.5,18.5-40.6,41-40.5.2,0,.4,0,.5,0,8.2,0,16.2,2.4,22.9,7.1v-6.3h19.3v78.6h-19.3v-5.2c-6.8,4.4-14.8,6.9-22.9,6.9-22.7.3-41.2-17.9-41.5-40.6,0,0,0,0,0,0ZM514.6,545.3c.1,12.7,10.5,22.8,23.1,22.7,12.5-.1,22.5-10.2,22.7-22.7-.1-12.7-10.5-22.8-23.1-22.7-12.5.1-22.5,10.2-22.7,22.7ZM616.3,584.2v-17.1l41.6-44.3h-39.6v-17.2h65.5v17.2l-41.6,44.3h44.4v17.1h-70.3ZM589.7,584.2v-78.6h19.5v78.6h-19.5ZM588.1,488.2c0-6.2,4.9-11.2,11.1-11.2,6.2,0,11.2,4.9,11.2,11.1,0,6.2-4.9,11.2-11.1,11.2,0,0,0,0,0,0-6.1,0-11.1-4.9-11.1-11.1,0,0,0,0,0,0Z"/>
+      </g>
+    </svg>
+  </a>
+</header>
+
+<section class="slide" id="top">
+  <div class="eyebrow"><span class="dot"></span>NFPI &middot; Kickoff september 2026</div>
+  <h1 class="title">
+    Kickoff<br>
+    <span class="grad">Google Ads</span><br>
+    voor NFPI.
+  </h1>
+  <p class="lead">
+    Doelen, website, zoekvraag, campagneopzet en de eerste 90 dagen. Kort en concreet, zodat we direct kunnen starten.
+  </p>
+  <div class="meta">Opgesteld door Aizy</div>
+  <div class="scroll-hint">Scroll</div>
+</section>
+
+<section class="slide" id="nfpi">
+  <div class="gradient-line"></div>
+  <h2 class="heading">Wat we van jullie <span class="grad">weten.</span></h2>
+  <p class="lead">Intake en website naast elkaar. Klopt dit beeld?</p>
+  <div class="grid" style="margin-top: 16px; max-width: 1100px;">
+    <div class="card">
+      <div class="label">Doelgroep</div>
+      <h4>MKB &amp; B.V.-bestuurders</h4>
+      <p>Ondernemers met financi&euml;le problemen, in heel Nederland. Kantoor in Diemen.</p>
+    </div>
+    <div class="card accent">
+      <div class="label">Zes diensten</div>
+      <h4>Voorkomen van insolventie voorop</h4>
+      <p>Daarna herstructurering. Beëindiging, ontbinding en financieel advies volgen als het budget groeit.</p>
+    </div>
+    <div class="card">
+      <div class="label">Toon</div>
+      <h4>&ldquo;Snel. Vertrouwelijk. Zakelijk. Zonder oordeel.&rdquo;</h4>
+      <p>Formeel met &ldquo;u&rdquo;. Die toon nemen we over in de advertenties.</p>
+    </div>
+    <div class="card">
+      <div class="label">Ideale lead</div>
+      <h4>Te lang gewacht</h4>
+      <p>Belastingschuld, beslag of een faillissementsaanvraag. De nood is hoog.</p>
+    </div>
+    <div class="card">
+      <div class="label">Bewijs op de site</div>
+      <h4>1.800 dossiers &middot; 95% succes</h4>
+      <p>Sterk in advertenties, mits onderbouwd. Google toetst claims.</p>
+    </div>
+    <div class="card">
+      <div class="label">Grootste drempel</div>
+      <h4>Te onbekend</h4>
+      <p>Op Google geen probleem: ondernemers zoeken op hun situatie, niet op de naam NFPI.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="doelen">
+  <div class="gradient-line"></div>
+  <h2 class="heading">Doelen &amp; <span class="grad">business case.</span></h2>
+  <div class="grid" style="margin-top: 16px; max-width: 1100px;">
+    <div class="card">
+      <div class="label">Doel per maand</div>
+      <div class="value">12&ndash;15</div>
+      <div class="sub">Nieuwe leads, ambitie op termijn</div>
+    </div>
+    <div class="card">
+      <div class="label">Waarde per klant</div>
+      <div class="value">&euro;5&ndash;10K</div>
+      <div class="sub">Gemiddelde opdrachtwaarde</div>
+    </div>
+    <div class="card">
+      <div class="label">Lead naar klant</div>
+      <div class="value">90%</div>
+      <div class="sub">Volgens intake</div>
+    </div>
+    <div class="card accent">
+      <div class="label">Mediabudget</div>
+      <div class="value">&euro;1.000</div>
+      <div class="sub">Per maand, circa &euro;33 per dag</div>
+    </div>
+  </div>
+  <div class="kpi-row" style="margin-top: 26px;">
+    <div class="kpi-pill">Waarde per lead: <strong>&euro;4.500+</strong></div>
+    <div class="kpi-pill">1 klant betaalt het budget <strong>5&ndash;10x</strong> terug</div>
+    <div class="kpi-pill">Verwachting start: <strong>1&ndash;2 leads per maand</strong></div>
+  </div>
+  <div class="callout">
+    <strong>Voorstel succes na 3 maanden:</strong> de kosten per lead gehalveerd naar circa &euro;300 en de eerste klanten aantoonbaar uit Google Ads. Daarvoor stemmen we regelmatig af welke leads er binnenkwamen en hoe goed ze waren.
+  </div>
+</section>
+
+<section class="slide" id="website">
+  <div class="gradient-line"></div>
+  <h2 class="heading">Is de website klaar voor <span class="grad">verkeer?</span></h2>
+  <p class="lead">We hebben alle pagina&rsquo;s van nfpi.nl doorgelopen. De boodschap is sterk, de route van klik naar lead nog niet.</p>
+  <div class="findings">
+    <div class="finding good">
+      <div class="ico"></div>
+      <div>
+        <h5>Homepage raakt precies de pijn</h5>
+        <p>Belastingschulden, beslag, faillissementsaanvraag en bestuurdersaansprakelijkheid staan er helder in.</p>
+      </div>
+    </div>
+    <div class="finding warn">
+      <div class="ico"></div>
+      <div>
+        <h5>Contact kost te veel moeite</h5>
+        <p>Alle knoppen leiden naar een intakeformulier met 48 velden. Het telefoonnummer is niet klikbaar.</p>
+      </div>
+    </div>
+    <div class="finding warn">
+      <div class="ico"></div>
+      <div>
+        <h5>Geen meting gevonden</h5>
+        <p>Geen Google Tag Manager, GA4 of Google Ads tag op de gecontroleerde pagina&rsquo;s.</p>
+      </div>
+    </div>
+    <div class="finding warn">
+      <div class="ico"></div>
+      <div>
+        <h5>Technische fouten en ontbrekende pagina&rsquo;s</h5>
+        <p>robots.txt en een menulink geven een serverfout. Er is nog geen pagina over WHOA of doorstart.</p>
+      </div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Vóór livegang:</strong> een kort contactformulier met klikbaar telefoonnummer, tracking via Tag Manager en de serverfouten opgelost.
+  </div>
+</section>
+
+<section class="slide" id="zoekvraag">
+  <div class="gradient-line"></div>
+  <h2 class="heading">Zoekvraag per <span class="grad">dienst.</span></h2>
+  <p class="lead">Alle zes diensten van nfpi.nl, met hoe ondernemers ernaar zoeken en welke rol ze krijgen in Google Ads.</p>
+  <div style="overflow-x:auto;">
+  <table class="kpi" style="max-width: 1100px;">
+    <thead>
+      <tr>
+        <th>Dienst op nfpi.nl</th>
+        <th>Voorbeeldzoekwoorden (volume p/m)</th>
+        <th style="text-align:right;">Totaal p/m</th>
+        <th>Rol in Google Ads</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Voorkomen van insolventie</strong></td><td>dreigend faillissement (150) &middot; schuldhulpverlening ondernemers (150) &middot; faillissementsaanvraag (150) &middot; faillissement voorkomen (100)</td><td class="num">~1.200</td><td class="pos">Kern, direct live</td></tr>
+      <tr><td><strong>Organisatie &amp; herstructureringsadvies</strong></td><td>whoa procedure (400) &middot; herstructurering bedrijf (300) &middot; herstructurering advies (250) &middot; doorstart na faillissement (200)</td><td class="num">~2.000</td><td>Oplossingen, na nieuwe pagina&rsquo;s</td></tr>
+      <tr><td><strong>Bedrijfsbeëindiging</strong></td><td>bedrijf stoppen (200) &middot; bv opheffen met schulden (150) &middot; faillissement eenmanszaak (150) &middot; bedrijfsbeëindiging (150)</td><td class="num">~700</td><td>Fase 2</td></tr>
+      <tr><td><strong>Juridische begeleiding bij ontbinding</strong></td><td>bv opheffen (300) &middot; bv liquideren (250) &middot; liquidatie bv (200) &middot; ontbinding bv (100)</td><td class="num">~940</td><td>Fase 2, alleen met schulden</td></tr>
+      <tr><td><strong>Financieel advies op maat</strong></td><td>liquiditeitsprognose (600) &middot; bedrijfsadviseur (400) &middot; cashflow verbeteren (200) &middot; financieel adviseur zzp (150)</td><td class="num">~1.350</td><td>Later, als test</td></tr>
+      <tr><td><strong>Persoonlijke begeleiding</strong></td><td>coaching ondernemers (200) &middot; ondernemerscoach (150) &middot; burn-out ondernemer (100) &middot; hulp voor ondernemers (50)</td><td class="num">~500</td><td>Geen eigen campagne, wel boodschap in elke advertentie</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="body" style="margin-top: 12px; font-size: 13px; color: var(--ink-mute);">Volume: Ahrefs, Nederland, gemiddeld per maand. Klikprijzen in de markt: van &euro;3,70 (BV opheffen) tot &euro;10,93 (doorstart), uit een vergelijkbaar account.</p>
+  <div class="callout">
+    <strong>Bewust niet:</strong> &ldquo;faillissement&rdquo; (22.000 p/m), &ldquo;failliet&rdquo; (8.300), &ldquo;liquiditeitsbegroting&rdquo; (2.900), &ldquo;beslag&rdquo; (2.100) en &ldquo;turboliquidatie&rdquo; (1.100). Nieuwslezers, studenten, particulieren en ondernemers die zelf een lege BV opheffen. In een vergelijkbaar account kostte &ldquo;faillissement&rdquo; 14% van het budget zonder één lead.
+  </div>
+</section>
+
+<section class="slide" id="budget">
+  <div class="gradient-line"></div>
+  <h2 class="heading">Wat kost <span class="grad">een lead?</span></h2>
+  <p class="lead">Bij circa &euro;6 per klik levert &euro;1.000 zo&rsquo;n 165 klikken per maand op. In een vergelijkbaar account werd ongeveer 1 op de 100 klikken een lead. Dat is circa &euro;600 per lead.</p>
+  <div style="overflow-x:auto;">
+  <table class="kpi" style="max-width: 960px;">
+    <thead>
+      <tr>
+        <th>Scenario bij &euro;1.000 per maand</th>
+        <th style="text-align:right;">Klik naar lead</th>
+        <th style="text-align:right;">Leads per maand</th>
+        <th style="text-align:right;">Kosten per lead</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Start</strong> &middot; nulmeting uit de markt</td><td class="num">1%</td><td class="num">1&ndash;2</td><td class="num neg">~&euro;600</td></tr>
+      <tr><td>Met kort contactformulier</td><td class="num">2%</td><td class="num">~3</td><td class="num">~&euro;300</td></tr>
+      <tr><td>Na optimalisatie</td><td class="num">3%</td><td class="num">~5</td><td class="num pos">~&euro;200</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="device-stat" style="margin-top: 26px;">
+    <div class="stat">
+      <div class="small">Verwachting eerste maanden</div>
+      <div class="big">1&ndash;2</div>
+      <div class="hint">Leads per maand, circa &euro;600 per lead</div>
+    </div>
+    <div class="stat highlight">
+      <div class="small">Toch rendabel</div>
+      <div class="big">5&ndash;10x</div>
+      <div class="hint">Eén klant van &euro;5.000 tot &euro;10.000 verdient het budget ruim terug</div>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Aanbeveling:</strong> reken bij de start op 1 à 2 leads per maand. Het eerste doel is de kosten per lead omlaag krijgen, van circa &euro;600 naar &euro;200 tot &euro;300. Pas daarna is opschalen zinvol: 12 tot 15 leads bij &euro;300 per lead vraagt &euro;3.600 tot &euro;4.500 per maand.
+  </div>
+</section>
+
+<section class="slide" id="structuur">
+  <div class="gradient-line"></div>
+  <h2 class="heading">Campagne&shy;<span class="grad">structuur.</span></h2>
+  <p class="lead">Drie Search-campagnes met een eigen budget, zodat goedkope oriënterende klikken het budget van urgente zoekers niet opeten.</p>
+  <div class="grid" style="margin-top: 16px; max-width: 1100px;">
+    <div class="card accent">
+      <div class="label">Campagne 1 &middot; &euro;22 per dag</div>
+      <h4>Kern</h4>
+      <ul class="bullets">
+        <li><div>Faillissement voorkomen</div></li>
+        <li><div>Financi&euml;le problemen &amp; schulden</div></li>
+        <li><div>Acute nood</div></li>
+        <li><div>Belastingschuld bedrijf (test)</div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Campagne 2 &middot; &euro;8 per dag</div>
+      <h4>Oplossingen</h4>
+      <ul class="bullets">
+        <li><div>WHOA &amp; akkoord met schuldeisers</div></li>
+        <li><div>Financi&euml;le herstructurering</div></li>
+        <li><div>Doorstart</div></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Campagne 3 &middot; &euro;3 per dag</div>
+      <h4>Merk</h4>
+      <ul class="bullets">
+        <li><div>NFPI</div></li>
+        <li><div>Nationaal Faillissement Preventie Instituut</div></li>
+      </ul>
+    </div>
+  </div>
+  <div class="kpi-row" style="margin-top: 26px;">
+    <div class="kpi-pill">Regio: <strong>heel Nederland</strong></div>
+    <div class="kpi-pill">Zoekwoorden: <strong>exact &amp; woordgroep</strong></div>
+    <div class="kpi-pill">Fase 2: <strong>Bedrijfsbeëindiging &amp; ontbinding</strong></div>
+    <div class="kpi-pill">Later: <strong>Financieel advies op maat</strong></div>
+  </div>
+  <div class="callout">
+    <strong>Volgorde:</strong> Kern en Merk gaan als eerste live. Oplossingen volgt zodra er een WHOA- en doorstartpagina staat.
+  </div>
+</section>
+
+<section class="slide auto" id="uitwerking">
+  <div class="gradient-line"></div>
+  <h2 class="heading">Zoekwoorden &amp; <span class="grad">advertenties.</span></h2>
+  <div class="split">
+    <div>
+      <div style="overflow-x:auto;">
+      <table class="kpi">
+        <thead>
+          <tr>
+            <th>Advertentiegroep</th>
+            <th>Voorbeeldzoekwoorden (volume p/m)</th>
+            <th style="text-align:right;">Totaal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Faillissement voorkomen</td><td>dreigend faillissement (150) &middot; faillissement voorkomen (100) &middot; hulp bij faillissement (70) &middot; bedrijf gaat failliet (30)</td><td class="num">~350</td></tr>
+          <tr><td>Financi&euml;le problemen</td><td>schuldhulpverlening ondernemers (150) &middot; liquiditeitsprobleem (100) &middot; schuldhulp ondernemers (80) &middot; schulden bedrijf (80)</td><td class="num">~520</td></tr>
+          <tr><td>Acute nood</td><td>faillissementsaanvraag (150) &middot; bestuurdersaansprakelijkheid bv (80) &middot; beslag op zakelijke rekening (40)</td><td class="num">~350</td></tr>
+          <tr><td>Belastingschuld (test)</td><td>uitstel van betaling belastingdienst (800) &middot; belastingschuld bedrijf</td><td class="num">~800</td></tr>
+          <tr><td>WHOA &amp; herstructurering</td><td>whoa procedure (400) &middot; herstructurering bedrijf (300) &middot; herstructurering advies (250) &middot; whoa traject (200)</td><td class="num">~1.600</td></tr>
+          <tr><td>Doorstart</td><td>doorstart na faillissement (200) &middot; doorstart bedrijf (30)</td><td class="num">~230</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="kpi-row" style="margin-top: 18px;">
+        <div class="kpi-pill">Uitsluiten: <strong>particulier &middot; wsnp &middot; nieuws &middot; uwv &middot; vacature &middot; pannenkoeken</strong></div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="label">Voorbeeldadvertentie &middot; Faillissement voorkomen</div>
+        <h4>Faillissement voorkomen? &middot; Snel, vertrouwelijk, zakelijk &middot; 1.800+ dossiers begeleid</h4>
+        <p>Belastingschuld, beslag of een faillissementsaanvraag? Bespreek uw situatie vertrouwelijk.</p>
+        <p style="margin-top: 10px;">Hoe eerder u handelt, hoe meer opties er zijn. Vraag vandaag een vrijblijvend gesprek aan.</p>
+      </div>
+      <ul class="bullets" style="margin-top: 20px;">
+        <li><div>Advertenties spreken de situatie aan, niet de dienstnaam.</div></li>
+        <li><div>Elke advertentiegroep krijgt een passende landingspagina met kort contactformulier.</div></li>
+        <li><div>Geen teksten die suggereren dat NFPI een overheidsinstantie is.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="planning">
+  <div class="gradient-line"></div>
+  <h2 class="heading">De eerste <span class="grad">90 dagen.</span></h2>
+  <div style="max-width: 960px;">
+    <div class="sum-row">
+      <div class="num">01</div>
+      <div>
+        <h4>Week 1&ndash;2 &middot; Fundament</h4>
+        <p>Toegangen, kort contactformulier en serverfouten met Will, tracking inrichten, campagnes bouwen. Livegang Kern en Merk.</p>
+      </div>
+    </div>
+    <div class="sum-row">
+      <div class="num">02</div>
+      <div>
+        <h4>Week 3&ndash;6 &middot; Leerfase</h4>
+        <p>Dagelijks zoektermen controleren en uitsluiten. Na elke lead een korte kwaliteitscheck met jullie team.</p>
+      </div>
+    </div>
+    <div class="sum-row">
+      <div class="num">03</div>
+      <div>
+        <h4>Week 7&ndash;12 &middot; Uitbreiden</h4>
+        <p>Campagne Oplossingen live, advertenties en landingspagina testen. Vaste afstemming over het aantal leads en de kwaliteit ervan.</p>
+      </div>
+    </div>
+    <div class="sum-row">
+      <div class="num">04</div>
+      <div>
+        <h4>Maand 3 &middot; Evaluatie</h4>
+        <p>Kosten per lead, klanten en omzet naast elkaar. Is de kosten per lead omlaag en de leadkwaliteit goed? Dan stap voor stap opschalen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="vragen">
+  <div class="gradient-line"></div>
+  <h2 class="heading">Open vragen &amp; <span class="grad">volgende stap.</span></h2>
+  <div style="max-width: 960px;">
+    <div class="sum-row">
+      <div class="num">01</div>
+      <div>
+        <h4>Welke dienst heeft prioriteit?</h4>
+        <p>Faillissement voorkomen, WHOA, doorstart of beëindiging: waar zit de meeste waarde en capaciteit?</p>
+      </div>
+    </div>
+    <div class="sum-row">
+      <div class="num">02</div>
+      <div>
+        <h4>Contact binnen 3 uur of binnen 2 werkdagen?</h4>
+        <p>Intake en formulier zeggen iets anders. We beloven alleen wat jullie altijd waarmaken.</p>
+      </div>
+    </div>
+    <div class="sum-row">
+      <div class="num">03</div>
+      <div>
+        <h4>Welke cijfers kunnen jullie onderbouwen?</h4>
+        <p>1.800 dossiers, 95% succes en &euro;100 miljoen bespaard. Bepaalt wat in de advertenties mag.</p>
+      </div>
+    </div>
+    <div class="sum-row">
+      <div class="num">04</div>
+      <div>
+        <h4>Hoe houden we elkaar op de hoogte van leads?</h4>
+        <p>Wie is het aanspreekpunt? We horen graag kort welke leads er binnenkwamen en of ze goed waren, zodat we kunnen bijsturen.</p>
+      </div>
+    </div>
+  </div>
+  <div class="kpi-row" style="margin-top: 26px;">
+    <div class="kpi-pill">Nodig: <strong>Google Ads &middot; Search Console &middot; contact met Will</strong></div>
+  </div>
+  <div class="cta-row">
+    <a class="cta" href="#top">Terug naar boven</a>
+  </div>
+</section>
+
+
+
+<footer>
+  Aizy &middot; AI marketing made aizy &middot; aizy.com
+</footer>
+
+</body>
+</html>
